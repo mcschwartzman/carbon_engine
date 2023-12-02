@@ -8,19 +8,30 @@ levels = [0.23, 0.33, 0.44, 0.56, 0.69, 0.82, 0.96, 1.12, 1.24, 1.39, 1.54, 1.69
 
 engine = carbon_engine.CarbonEngine(2)
 
-# fitting
-fit = np.polyfit(years, levels, 3)
-projection = np.poly1d(fit)
-projected_levels = projection(years)
-
 # calculate year intervals to show with projection
-print(years[-1:])
-last_year = years[-1:]
+last_year = years[-1]
+
+test_year = 2150
+
+additional_years = []
+
+if (test_year > last_year):
+
+    # make an array from the last year to the test year in increments of 10
+    # append that array to the years array
+
+    additional_years = list(range(last_year, test_year, 10))
+
+# fitting
+fit = np.polyfit(years, levels, 2)
+projection = np.poly1d(fit)
+projected_levels = projection(years + additional_years)
+
 
 # plotting and showing
 pylab.scatter(years, levels)
-pylab.plot(years, projected_levels)
+pylab.plot(years + additional_years, projected_levels)
 pylab.show()
 
 
-print(projection(2150))
+print(projection(test_year))

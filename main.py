@@ -6,6 +6,7 @@ import pylab
 
 import carbon_engine
 
+# Create models
 sea_level = model_sea_level(2100)
 atmospheric_carbon = model_atmospheric_carbon(2100)
 
@@ -38,5 +39,17 @@ pylab.plot(overlapping_years, ratios)
 
 pylab.legend(['Sea Level Rise (mm)','Atmospheric Carbon (ppm)', 'Ratio (%)'])
 pylab.title('Carbon Footprint - Sea Level Relationship')
+
+# Plot only sea level
+# pylab.scatter(sea_level[3], sea_level[4])
+# pylab.plot(sea_level[0], sea_level[1])
+# pylab.legend(['JPL Measured Sea Level', 'Simple 2D LSF'])
+# pylab.title('Sea Level Projections (m)')
+
+# Plot only atmospheric carbon
+# pylab.scatter(atmospheric_carbon[3], atmospheric_carbon[4])
+# pylab.plot(atmospheric_carbon[0], atmospheric_carbon[1])
+# pylab.legend(['NOAA Atmospheric Carbon', 'Simple 2D LSF'])
+# pylab.title('Atmospheric Carbon Projections (ppm)')
 
 pylab.show()

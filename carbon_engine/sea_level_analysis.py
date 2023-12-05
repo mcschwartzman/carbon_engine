@@ -29,5 +29,5 @@ def model_sea_level(test_year):
     projection = np.poly1d(fit)
     projected_sea_levels = projection(projected_years)
 
-    return [projected_years, projected_sea_levels, projection]
+    return [projected_years, projected_sea_levels, projection, years, sea_levels]
 

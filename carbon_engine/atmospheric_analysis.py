@@ -27,4 +27,4 @@ def model_atmospheric_carbon(test_year):
     projection = np.poly1d(fit)
     projected_co2_readings = projection(projected_years)
 
-    return [projected_years, projected_co2_readings, projection]
+    return [projected_years, projected_co2_readings, projection, years, co2_readings]
